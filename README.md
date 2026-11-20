@@ -5,7 +5,7 @@
 
 ## 一键导入（模块 URL，国内可用）
 ```
-https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v1/recall-pro.sgmodule
+https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v2/recall-pro.sgmodule
 ```
 备用（raw 直连，需能访问 GitHub）：
 ```
