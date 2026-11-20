@@ -3,8 +3,8 @@
 #!system=ios
 
 [Script]
-RecallPro_Req  = type=http-request,  pattern=^https?:\/\/api\.revenuecat\.com\//, script-path=https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v2/scripts/recall_pro_req.js
-RecallPro_Resp = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\//, requires-body=1, max-size=1048576, script-path=https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v2/scripts/recall_pro.js
+RecallPro_Req  = type=http-request,  pattern=^https?:\/\/(api|www)\.revenuecat\.com\//, script-path=https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v3/scripts/recall_pro_req.js
+RecallPro_Resp = type=http-response, pattern=^https?:\/\/(api|www)\.revenuecat\.com\//, requires-body=1, max-size=1048576, script-path=https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v3/scripts/recall_pro.js
 
 [MITM]
-hostname = %APPEND% api.revenuecat.com
+hostname = %APPEND% api.revenuecat.com, www.revenuecat.com
