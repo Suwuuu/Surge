@@ -3,7 +3,11 @@
 通过 MITM `api.revenuecat.com` 并改写 CustomerInfo 响应，让 Recall 判定为 Pro。
 （Recall 的 Pro 门控是纯客户端判定，真值来自 RevenueCat 的 `entitlements["Recall Pro"].isActiveInAnyEnvironment`。）
 
-## 一键导入（模块 URL）
+## 一键导入（模块 URL，国内可用）
+```
+https://gcore.jsdelivr.net/gh/Suwuuu/Surge@v1/recall-pro.sgmodule
+```
+备用（raw 直连，需能访问 GitHub）：
 ```
 https://raw.githubusercontent.com/Suwuuu/Surge/main/recall-pro.sgmodule
 ```
