@@ -1,9 +1,10 @@
-// Drop conditional-cache headers so RevenueCat answers 200 with a fresh body
-// instead of 304 (a 304 has no body for the response script to rewrite).
-
-let h = Object.assign({}, $request.headers);
-delete h["If-None-Match"];
-delete h["if-none-match"];
-delete h["X-RC-Cache-Key"];
-delete h["x-rc-cache-key"];
-$done({ headers: h });
+// Drop conditional-cache headers + force revalidation so RevenueCat returns 200 (not 304)
+try {
+  var h = Object.assign({}, $request.headers);
+  ["If-None-Match","if-none-match","If-Modified-Since","if-modified-since","X-RC-Cache-Key","x-rc-cache-key"]
+    .forEach(function (k) { delete h[k]; });
+  h["Cache-Control"] = "no-cache";
+  $done({ headers: h });
+} catch (e) {
+  $done({});
+}
