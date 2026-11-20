@@ -1,0 +1,10 @@
+#!name=Recall Pro Unlock
+#!desc=Rewrite RevenueCat CustomerInfo so "Recall Pro" is always active (client-side gate). Needs MITM CA trusted.
+#!system=ios
+
+[Script]
+RecallPro_Req  = type=http-request,  pattern=^https?:\/\/api\.revenuecat\.com\/v1\/subscribers, script-path=https://raw.githubusercontent.com/Suwuuu/Surge/main/scripts/recall_pro_req.js
+RecallPro_Resp = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers|receipts), requires-body=1, max-size=1048576, script-path=https://raw.githubusercontent.com/Suwuuu/Surge/main/scripts/recall_pro.js
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
